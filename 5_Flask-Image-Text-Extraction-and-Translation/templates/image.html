@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <title>Image Upload</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/image.css') }}">
+</head>
+
+<body>
+  <h1>Text extraction and translation</h1>
+  <br><br><br><br><br>
+  <div class="center-element">
+    <h4>Text language<h4>
+        <form action="/image_upload/" method="post" enctype="multipart/form-data" class="center">
+          <select name="from">
+            <option value="English" selected>From (English)</option>
+            {% for language in lng %}
+            <option value="{{ language }}">{{ language }}</option>
+            {% endfor %}
+          </select>
+          <select name="to">
+            <option value="English" selected>To (English)</option>
+            {% for language in lng %}
+            <option value="{{ language }}">{{ language }}</option>
+            {% endfor %}
+          </select>
+
+
+  </div>
+  <br><br>
+
+  <div class="center-element">
+
+    <input type="file" name="image" id="readUrl" accept="image/*" />
+    <label for="image">Select image:</label>
+    <input type="submit" />
+    </form>
+    <br><br>
+    <script src="{{ url_for('static', filename='js/image.js') }}"></script>
+    <img id="uploadedImage" src="#" alt="Uploaded Image" accept="image/png, image/jpeg" style="display:none;">
+
+  </div>
+</body>
+
+</html>

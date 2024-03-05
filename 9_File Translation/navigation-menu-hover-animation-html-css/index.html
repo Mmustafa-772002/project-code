@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="style.css" />
+    
+    <style>
+      /* Styling for the Google Translate script section */
+      #translate-container {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background-color: rgba(255, 255, 255, 0.9);
+          padding: 10px;
+          border-radius: 5px;
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+          z-index: 1000;
+      }
+      
+  
+      /* Styling for the select element */
+      #translation-select {
+          padding: 5px;
+          font-size: 14px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+      }
+  
+      /* Styling for the translate button */
+      #translate-button {
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          border-radius: 3px;
+          padding: 5px 10px;
+          cursor: pointer;
+          margin-left: 10px;
+          font-size: 14px;
+      }
+
+     
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+  </style>
+  
+</head>
+<body>
+    <!-- Center the Google Translate script using a container -->
+    <div id="translate-container">
+        <!-- Google Translate Script -->
+        <div id="google_element"></div>
+    </div>
+
+    <section class="about-us">
+        <div class="about">
+            <img src="girl.jpg" class="pic" />
+            <div class="text">
+                <h2>About Us</h2>
+                <h5>Front-end Developer & <span>Designer</span></h5>
+                <p>Welcome to our website! We are a passionate team of front-end developers and designers dedicated to creating beautiful and functional web experiences.</p>
+                <p>Our mission is to bring your ideas to life by crafting visually stunning and user-friendly websites that leave a lasting impression. With a keen eye for design and a commitment to the latest web technologies, we strive to deliver websites that not only meet but exceed your expectations.</p>
+                <p>Whether you're a business looking to establish an online presence or an individual with a creative project in mind, we're here to help. Feel free to explore our portfolio and get in touch if you'd like to work with us.</p>
+                <div class="data">
+                    <a href="#" class="hire">Hire Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Translate Script -->
+    <script>
+        function loadGoogleTranslate() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', // Default page language
+                includedLanguages: 'en,hi,bn,te,mr,ta,ur,gu,kn,pa,ml,or,as,kok,ne,sa,mni,sd,ks,doi', // List of supported languages
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_element');
+        }
+
+        const translationSelect = document.getElementById('translation-select');
+        translationSelect.addEventListener('change', function () {
+            const selectedLanguage = this.value;
+            google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: selectedLanguage }, 'google_element');
+        });
+    </script>
+    <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+</body>
+</html>

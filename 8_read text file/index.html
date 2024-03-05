@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>Show File Data</title>
+    <style type='text/css'>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+
+    <div id="google_element"></div>
+    <script>
+        function loadGoogleTranslate() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'hi,bn,te,mr,ta,ur,gu,kn,pa,ml,or,as,kok,ne,sa,mni,sd,ks,doi,bodo', // List of Indian languages
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_element');
+        }
+    </script>
+    <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+    <script type='text/javascript'>
+
+        function loadFile() {
+            var input, file, fr;
+
+            if (typeof window.FileReader !== 'function') {
+                bodyAppend("p", "The file API isn't supported on this browser yet.");
+                return;
+            }
+
+            input = document.getElementById('fileinput');
+            if (!input) {
+                bodyAppend("p", "Um, couldn't find the fileinput element.");
+            }
+            else if (!input.files) {
+                bodyAppend("p", "This browser doesn't seem to support the `files` property of file inputs.");
+            }
+            else if (!input.files[0]) {
+                bodyAppend("p", "Please select a file before clicking 'Load'");
+            }
+            else {
+                file = input.files[0];
+                fr = new FileReader();
+                fr.onload = receivedText;
+                fr.readAsText(file);
+            }
+
+            function receivedText() {
+                showResult(fr, "Text");
+            }
+        }
+
+        function showResult(fr, label) {
+            var result = fr.result;
+            var textarea = document.getElementById('fileDisplayArea');
+
+            // Set the content of the textarea with the id 'fileDisplayArea'
+            textarea.value = result;
+
+            // Set automatic height and width based on content
+            textarea.rows = result.split('\n').length + 1;
+            textarea.cols = Math.max.apply(null, result.split('\n').map(function (line) {
+                return line.length;
+            })) + 1;
+
+            // Calculate counts
+            var lineCount = result.split('\n').length;
+            var wordCount = result.match(/\b\w+\b/g) ? result.match(/\b\w+\b/g).length : 0;
+            var numberCount = result.match(/\b\d+\b/g) ? result.match(/\b\d+\b/g).length : 0;
+            var symbolCount = result.replace(/[A-Za-z0-9]/g, "").length;
+
+            // Display counts
+            var infoText = "Lines: " + lineCount + ", Words: " + wordCount + ", Numbers: " + numberCount + ", Symbols: " + symbolCount;
+            document.getElementById('textInfo').innerText = infoText;
+        }
+
+        function clearText() {
+            document.getElementById('fileDisplayArea').value = '';
+            document.getElementById('textInfo').innerText = '';
+        }
+
+        function translateText() {
+            var textarea = document.getElementById('fileDisplayArea');
+            var originalText = textarea.value;
+
+            google.translate.translate({
+                source: 'en',
+                target: 'hi', // Change this to the desired target language code
+                q: originalText
+            }, function (result) {
+                var translatedText = result.data.translations[0].translatedText;
+                textarea.value = translatedText;
+            });
+        }
+
+        function saveFile() {
+            var textToSave = document.getElementById('fileDisplayArea').value;
+            var selectedFormat = document.getElementById('saveFormat').value;
+
+            switch (selectedFormat) {
+                case 'txt':
+                    saveText(textToSave);
+                    break;
+                case 'json':
+                    saveJSON(textToSave);
+                    break;
+                case 'pdf':
+                    savePDF(textToSave);
+                    break;
+                case 'ppt':
+                    savePowerPoint(textToSave);
+                    break;
+                case 'html':
+                    saveHTML(textToSave);
+                    break;
+                default:
+                    alert('Invalid file format selected.');
+            }
+        }
+
+        function saveText(content) {
+            saveFileWithExtension('file.txt', content, 'text/plain');
+        }
+
+        function saveJSON(content) {
+            try {
+                var jsonContent = JSON.stringify(JSON.parse(content), null, 2);
+                saveFileWithExtension('file.json', jsonContent, 'application/json');
+            } catch (e) {
+                alert('Invalid JSON format. Cannot save as JSON.');
+            }
+        }
+
+        function savePDF(content) {
+            var pdf = new jsPDF();
+            pdf.text(content, 10, 10);
+            pdf.save('file.pdf');
+        }
+
+        function savePowerPoint(content) {
+            // Placeholder for PowerPoint saving
+            alert('This feature is not implemented yet.');
+        }
+
+        function saveHTML(content) {
+            // Placeholder for HTML saving
+            alert('This feature is not implemented yet.');
+        }
+
+        function saveFileWithExtension(filename, content, mimeType) {
+            var blob = new Blob([content], { type: mimeType });
+
+            var link = document.createElement('a');
+            link.download = filename;
+            link.href = window.URL.createObjectURL(blob);
+            link.click();
+        }
+
+        function bodyAppend(tagName, innerHTML) {
+            var elm;
+
+            elm = document.createElement(tagName);
+            elm.innerHTML = innerHTML;
+            document.body.appendChild(elm);
+        }
+
+    </script>
+</head>
+
+<body>
+    <form action='#' onsubmit="return false;">
+        <input type='file' id='fileinput'>
+        <input type='button' id='btnLoad' value='Load' onclick='loadFile();'>
+        <input type='button' id='btnClear' value='Clear Text' onclick='clearText();'>
+
+        <!-- Dropdown for selecting file format -->
+        <select id='saveFormat'>
+            <option value='txt'>Text (.txt)</option>
+            <option value='json'>JSON (.json)</option>
+            <option value='pdf'>PDF (.pdf)</option>
+            <option value='ppt'>PowerPoint (.ppt)</option>
+            <option value='html'>HTML (.html)</option>
+        </select>
+
+        <!-- Button to trigger translation -->
+        <input type='button' id='btnTranslate' value='Translate' onclick='translateText();'>
+
+        <input type='button' id='btnSave' value='Save' onclick='saveFile();'>
+        <br>
+        <hr>
+        <div id='textInfo'></div>
+        <hr>
+        <!-- show result in TEXTarea box  -->
+        <textarea id='fileDisplayArea' rows='5' cols='30'></textarea>
+        <!-- Display info -->
+    </form>
+</body>
+
+</html>

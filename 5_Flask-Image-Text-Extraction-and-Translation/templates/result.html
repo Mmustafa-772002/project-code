@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+  </head>
+  <body>
+
+<h1>Text in the image</h1>
+<div class="center-element">
+<br><br><br> 
+<img  src="{{ url_for('img_share') }}" alt="">
+</div>
+<br><br><br> 
+<div class="center-div">{{ data }}</div>
+  </body>
+</html>

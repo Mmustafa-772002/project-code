@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- Declaration of the document type -->
+
+<html lang="en" dir="ltr">
+  <!-- Start of the HTML document with the language and text direction attributes -->
+  <head>
+    <meta charset="utf-8" />
+    <!-- Charset declaration for character encoding -->
+    <title>Language Translator</title>
+    <!-- Title of the web page -->
+    <link rel="stylesheet" href="Language_Translator.css" />
+    <!-- Link to an external CSS stylesheet -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Viewport configuration for responsive design -->
+    <!-- Font Awesome CDN Link for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!-- Link to Font Awesome icons library -->
+  </head>
+  <body>
+    <!-- Start of the HTML body section -->
+    <div class="container">
+      <!-- Container for page content -->
+      <div class="wrapper">
+        <!-- Wrapper for content within the container -->
+        <div class="text-input">
+          <!-- Container for text input elements -->
+          <textarea
+            spellcheck="false"
+            class="from-text"
+            placeholder="Enter text"
+          ></textarea>
+          <!-- Textarea for input text with placeholder -->
+          <textarea
+            spellcheck="false"
+            readonly
+            disabled
+            class="to-text"
+            placeholder="Translation"
+          ></textarea>
+          <!-- Read-only textarea for displaying translation -->
+        </div>
+        <ul class="controls">
+          <!-- Unordered list for control elements -->
+          <li class="row from">
+            <!-- List item for "from" language selection -->
+            <div class="icons">
+              <!-- Container for icons related to "from" language -->
+              <i id="from" class="fas fa-volume-up"></i>
+              <!-- Volume-up icon for "from" language -->
+              <i id="from" class="fas fa-copy"></i>
+              <!-- Copy icon for "from" language -->
+            </div>
+            <select></select>
+            <!-- Select element for choosing "from" language -->
+          </li>
+          <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
+          <!-- List item for exchange icon -->
+          <li class="row to">
+            <!-- List item for "to" language selection -->
+            <select></select>
+            <!-- Select element for choosing "to" language -->
+            <div class="icons">
+              <!-- Container for icons related to "to" language -->
+              <i id="to" class="fas fa-volume-up"></i>
+              <!-- Volume-up icon for "to" language -->
+              <i id="to" class="fas fa-copy"></i>
+              <!-- Copy icon for "to" language -->
+            </div>
+          </li>
+        </ul>
+      </div>
+      <button>Translate Text</button>
+      <!-- Button for triggering text translation -->
+    </div>
+
+    <!-- Scripts for JavaScript functionality -->
+    <script src="js/countries.js"></script>
+    <!-- External JavaScript file for defining language codes and names -->
+    <script src="js/script.js"></script>
+    <!-- External JavaScript file for handling translation and interaction -->
+  </body>
+</html>

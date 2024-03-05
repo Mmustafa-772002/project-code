@@ -1,0 +1,219 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Global reset and styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  /* Apply the 'Poppins' font to all elements */
+}
+
+/* Body styling */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  min-height: 100vh;
+  background: #5372F0;
+  /* Background color for the entire page */
+}
+
+/* Container for the main content */
+.container {
+  max-width: 690px;
+  width: 100%;
+  padding: 30px;
+  background: #fff;
+  /* Background color for the main container */
+  border-radius: 7px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.01);
+  /* Box shadow for a subtle visual effect */
+}
+
+/* Wrapper for content within the container */
+.wrapper {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  /* Border around the wrapper */
+}
+
+/* Styling for the text input section */
+.wrapper .text-input {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  /* Bottom border for separation */
+}
+
+/* Styling for the "to-text" textarea */
+.text-input .to-text {
+  border-radius: 0px;
+  border-left: 1px solid #ccc;
+  /* Left border for separation */
+}
+
+/* Styling for textareas used for input and translation display */
+.text-input textarea {
+  height: 250px;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  background: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+/* Placeholder text color for textareas */
+.text-input textarea::placeholder {
+  color: #b7b6b6;
+}
+
+/* Styling for control elements */
+.controls,
+li,
+.icons,
+.icons i {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Styling for the controls list */
+.controls {
+  list-style: none;
+  padding: 12px 15px;
+}
+
+/* Styling for the icons in the "from" and "to" language rows */
+.controls .row .icons {
+  width: 38%;
+}
+
+/* Styling for individual icons */
+.controls .row .icons i {
+  width: 50px;
+  color: #adadad;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  justify-content: center;
+}
+
+/* Styling for the "from" language row */
+.controls .row.from .icons {
+  padding-right: 15px;
+  border-right: 1px solid #ccc;
+  /* Right border for separation */
+}
+
+/* Styling for the "to" language row */
+.controls .row.to .icons {
+  padding-left: 15px;
+  border-left: 1px solid #ccc;
+  /* Left border for separation */
+}
+
+/* Styling for language selection dropdowns */
+.controls .row select {
+  color: #333;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: none;
+  padding-left: 5px;
+}
+
+/* Scrollbar styling for textareas and selects */
+.text-input textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+.controls .row select::-webkit-scrollbar {
+  width: 8px;
+}
+
+.text-input textarea::-webkit-scrollbar-track,
+.controls .row select::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.text-input textarea::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 8px;
+}
+
+.controls .row select::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 8px;
+  border-right: 2px solid #ffffff;
+}
+
+/* Styling for the exchange icon */
+.controls .exchange {
+  color: #adadad;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+/* Active state for icons */
+.controls i:active {
+  transform: scale(0.9);
+}
+
+/* Styling for the translate button */
+.container button {
+  width: 100%;
+  padding: 14px;
+  outline: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 17px;
+  border-radius: 5px;
+  background: #5372F0;
+  /* Background color for the button */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 660px) {
+  .container {
+    padding: 20px;
+  }
+
+  .wrapper .text-input {
+    flex-direction: column;
+  }
+
+  .text-input .to-text {
+    border-left: 0px;
+    border-top: 1px solid #ccc;
+  }
+
+  .text-input textarea {
+    height: 200px;
+  }
+
+  .controls .row .icons {
+    display: none;
+    /* Hide icons on smaller screens */
+  }
+
+  .container button {
+    padding: 13px;
+    font-size: 16px;
+  }
+
+  .controls .row select {
+    font-size: 16px;
+  }
+
+  .controls .exchange {
+    font-size: 14px;
+  }
+}
