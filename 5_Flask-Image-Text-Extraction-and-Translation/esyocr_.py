@@ -1,8 +1,10 @@
 import easyocr
-import translators.server as tss
+import translators as tss
 from flask import Flask, render_template, Response, request
 import os
 import cv2
+from PIL.Image import Resampling
+
 
 tnl=['en','en']
 app = Flask(__name__)
