@@ -11,7 +11,8 @@ app = Flask(__name__)
 path = os.getcwd()
 image = None
 
-lng = {'Afrikaans': 'af', 'Albanian': 'sq', 'Arabic': 'ar', 'Armenian': 'hy', 'Azerbaijani': 'az', 'Basque': 'eu', 'Belarusian': 'be', 'Bengali': 'bn', 'Bulgarian': 'bg', 'Catalan': 'ca', 'Chinese': 'zh-cn', 'Croatian': 'hr', 'Czech': 'cs', 'Danish': 'da', 'Dutch': 'nl', 'English': 'en', 'Estonian': 'et', 'Finnish': 'fi', 'French': 'fr', 'Galician': 'gl', 'Georgian': 'ka', 'German': 'de', 'Greek': 'el', 'Gujarati': 'gu', 'Haitian Creole': 'ht', 'Hebrew': 'he', 'Hindi': 'hi', 'Hungarian': 'hu', 'Icelandic': 'is', 'Indonesian': 'id', 'Irish': 'ga', 'Italian': 'it', 'Japanese': 'ja', 'Kannada': 'kn', 'Kazakh': 'kz', 'Khmer': 'km', 'Korean': 'ko', 'Latvian': 'lv', 'Lithuanian': 'lt', 'Macedonian': 'mk', 'Malay': 'ms', 'Maltese': 'mt', 'Marathi': 'mr', 'Mongolian': 'mn', 'Nepali': 'ne', 'Norwegian': 'no', 'Persian': 'fa', 'Polish': 'pl', 'Portuguese': 'pt', 'Romanian': 'ro', 'Russian': 'ru', 'Serbian': 'sr', 'Slovak': 'sk', 'Slovenian': 'sl', 'Spanish': 'es', 'Swahili': 'sw', 'Swedish': 'sv', 'Tamil': 'ta', 'Telugu': 'te', 'Thai': 'th', 'Turkish': 'tr', 'Ukrainian': 'uk', 'Urdu': 'ur', 'Uzbek': 'uz', 'Vietnamese': 'vi', 'Welsh': 'cy', 'Yiddish': 'yi'}
+lng = {  'Bengali': 'bn', 'English': 'en','Gujarati': 'gu', 'Hindi': 'hi', 'Kannada': 'kn','Malayalam': 'ml', 'Marathi': 'mr', 'Nepali': 'ne', 'Odia': 'or','Punjabi': 'pa', 'Tamil': 'ta', 'Telugu': 'te', 'Urdu': 'ur',
+    }
 
 # def resu(file):
 #     global data
@@ -112,6 +113,17 @@ def img_():
         image = cv2.imread(path)
         data=ocr(flag)
         return render_template('result.html',data=data)
+
+# Back button route
+@app.route('/go_back')
+def go_back():
+    # Use the url_for function to get the URL for the 'index' endpoint
+    return redirect(url_for('index'))
+
+# Redirect to the "image.html" page on button click
+@app.route('/redirect_to_image')
+def redirect_to_image():
+    return redirect(url_for('image_page'))
 
 
 if __name__ == '__main__':

@@ -1,8 +1,8 @@
 {
     "Hidden": [],
-    "Favorites": ["D:/b/flask-fileexplorer-master/Database/Downloads", "D:/b/flask-fileexplorer-master/Database/Documents"],
+    "Favorites": ["D:/Final project report/final project/project code/6_lask-fileexplorer-master/Database/Documents", "D:/Final project report/final project/project code/6_lask-fileexplorer-master/Database/Downloads"],
     "Password": "",
-    "rootDir": "D:/b/flask-fileexplorer-master/Database",
+    "rootDir": "D:/Final project report/final project/project code/6_lask-fileexplorer-master/Database",
     "maxFileNameLength": 15,
     "sort_by_selected": 3
 }

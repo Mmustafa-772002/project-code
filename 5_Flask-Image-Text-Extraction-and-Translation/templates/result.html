@@ -1,16 +1,45 @@
 <html>
-  <head>
+<head>
     <title>result</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
-  </head>
-  <body>
+</head>
+<body>
 
-<h1>Text in the image</h1>
-<div class="center-element">
-<br><br><br> 
-<img  src="{{ url_for('img_share') }}" alt="">
-</div>
-<br><br><br> 
-<div class="center-div">{{ data }}</div>
-  </body>
+    <h1>Text in the image</h1>
+    <div class="center-element">
+        <br><br><br> 
+        <img src="{{ url_for('img_share') }}" alt="">
+    </div>
+    <br><br><br> 
+
+    <div class="center-div">
+        <textarea id="textArea" readonly cols='30' style="resize: none; width: 600px; padding: 2px;">{{ data }}</textarea>
+    </div>
+
+    <button onclick="uploadAgain()">Upload Again</button>
+
+    <script>
+        // Auto-adjust the height of the textarea based on content
+        function adjustTextareaHeight() {
+            var textarea = document.getElementById('textArea');
+            textarea.style.height = 'auto';
+            textarea.style.height = (textarea.scrollHeight) + 'px';
+        }
+
+        // Call the adjustTextareaHeight function when the window is resized
+        window.addEventListener('resize', adjustTextareaHeight);
+
+        // Call the adjustTextareaHeight function initially
+        window.addEventListener('load', adjustTextareaHeight);
+
+        // Function to handle the "Upload Again" button click
+        function uploadAgain() {
+            // Redirect to the "image.html" page
+            window.location.href = '/image_upload/templates/image.html';  // Adjust the URL accordingly
+        }
+    </script>
+    
+
+
+</body>
 </html>
