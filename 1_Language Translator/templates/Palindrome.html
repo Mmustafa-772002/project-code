@@ -4,7 +4,8 @@
   <head>
     <meta charset="utf-8" />
     <title>Palindrome verifier</title>
-    <link rel="stylesheet" href="Palindrome.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Palindrome.css') }}">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
@@ -26,7 +27,7 @@
       </div>
       <p class="info-txt"></p>
     </div>
-
-    <script src="Palindrome.js"></script>
+    <script src="{{ url_for('static', filename='js/Palindrome.js' ) }}" defer></script>
+    
   </body>
 </html>

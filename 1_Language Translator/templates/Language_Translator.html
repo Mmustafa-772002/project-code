@@ -8,7 +8,9 @@
     <!-- Charset declaration for character encoding -->
     <title>Language Translator</title>
     <!-- Title of the web page -->
-    <link rel="stylesheet" href="Language_Translator.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Language_Translator.css') }}">
+
+
     <!-- Link to an external CSS stylesheet -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Viewport configuration for responsive design -->
@@ -76,10 +78,9 @@
       <!-- Button for triggering text translation -->
     </div>
 
-    <!-- Scripts for JavaScript functionality -->
-    <script src="js/countries.js"></script>
-    <!-- External JavaScript file for defining language codes and names -->
-    <script src="js/script.js"></script>
-    <!-- External JavaScript file for handling translation and interaction -->
-  </body>
+  <!-- Scripts for JavaScript functionality -->
+<script src="{{ url_for('static', filename='js1/countries.js') }}"></script>
+<!-- External JavaScript file for defining language codes and names -->
+<script src="{{ url_for('static', filename='js1/script.js') }}"></script>
+</body>
 </html>

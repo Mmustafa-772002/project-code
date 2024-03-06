@@ -4,7 +4,8 @@
   <head>
     <meta charset="utf-8" />
     <title>Text To Speech</title>
-    <link rel="stylesheet" href="Text_To_Speech.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Text_To_Speech.css') }}">
+  
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
@@ -24,7 +25,8 @@
         <button>Convert To Speech</button>
       </form>
     </div>
-
-    <script src="Text_To_Speech.js"></script>
+    <script src="{{ url_for('static', filename='js/Text_To_Speech.js' ) }}" ></script>
+    
+    
   </body>
 </html>

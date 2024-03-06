@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SIH 2k23</title>
-    <link rel="stylesheet" href="Homepage.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Homepage.css') }}">
+  
+
     <!-- Fontawesome Link for Icons -->
     <link
       rel="stylesheet"
@@ -63,7 +65,7 @@
       <ul class="cards">
 
         <li class="card">
-          <a href="Language_Translator.html" style="text-decoration: none; color: inherit">
+          <a href="{{ url_for('page1') }}" style="text-decoration: none; color: inherit">
             <img
               src="https://images.unsplash.com/photo-1676302477502-fa8a634aaa8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
               alt="img"
@@ -74,7 +76,7 @@
         </li>
 
         <li class="card">
-          <a href="Drag_Drop.html" style="text-decoration: none; color: inherit">
+          <a href="{{ url_for('page2') }}" style="text-decoration: none; color: inherit">
           <img
             src="https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fERvY3VtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
             alt="img"
@@ -85,7 +87,7 @@
         </li>
 
         <li class="card">
-          <a href="Upload.html" style="text-decoration: none; color: inherit">
+          <a href="{{ url_for('page3') }}" style="text-decoration: none; color: inherit">
             <img
               src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1lZGlhfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
               alt="img"
@@ -97,7 +99,7 @@
 
         <li class="card">
           <a
-            href="Text_To_Speech.html"
+            href="{{ url_for('page4') }}"
             style="text-decoration: none; color: inherit"
           >
             <img
@@ -111,7 +113,7 @@
 
         <li class="card">
           <a
-            href="Dictionary.html"
+            href="{{ url_for('page5') }}"
             style="text-decoration: none; color: inherit"
           >
             <img
@@ -128,7 +130,7 @@
 
         <li class="card">
           <a
-            href="File_Foramat.html"
+            href="{{ url_for('page6') }}"
             style="text-decoration: none; color: inherit"
           >
             <img
@@ -146,7 +148,7 @@
 
         <li class="card">
           <a
-            href="Palindrome.html"
+            href="{{ url_for('page7') }}"
             style="text-decoration: none; color: inherit"
           >
             <img
@@ -161,7 +163,7 @@
         <!--  -->
 
         <li class="card">
-          <a href="Notes.html" style="text-decoration: none; color: inherit">
+          <a href="{{ url_for('page8') }}" style="text-decoration: none; color: inherit">
             <img
               src="https://images.unsplash.com/photo-1527168027773-0cc890c4f42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fHdvcmRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
               alt="img"
@@ -175,7 +177,7 @@
 
         <li class="card">
           <a
-            href="Quote_Generator.html"
+            href="{{ url_for('page9') }}"
             style="text-decoration: none; color: inherit"
           >
             <img
@@ -199,7 +201,7 @@
       <ul class="cards">
         <li class="card">
           <a
-            href="Word_Guessing_Game.html"
+            href="{{ url_for('page10') }}"
             style="text-decoration: none; color: inherit"
           >
             <img
@@ -212,7 +214,7 @@
         </li>
         <li class="card">
           <a
-            href="Word_Scramble_Game.html"
+            href="{{ url_for('page11') }}"
             style="text-decoration: none; color: inherit"
           >
             <img
@@ -225,7 +227,7 @@
         </li>
         <li class="card">
           <a
-            href="Typing_Speed.html"
+            href="{{ url_for('page12') }}"
             style="text-decoration: none; color: inherit"
           >
             <img
@@ -238,7 +240,7 @@
         </li>
         <li class="card">
           <a
-            href="Hangman_game.html"
+            href="{{ url_for('page13') }}"
             style="text-decoration: none; color: inherit"
           >
             <img
@@ -250,7 +252,7 @@
           </a>
         </li>
         <li class="card">
-          <a href="Quiz.html" style="text-decoration: none; color: inherit">
+          <a href="{{ url_for('page14') }}" style="text-decoration: none; color: inherit">
             <img
               src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
               alt="img"
@@ -261,7 +263,7 @@
         </li>
 
         <li class="card">
-          <a href="Drawing.html" style="text-decoration: none; color: inherit">
+          <a href="{{ url_for('page15') }}" style="text-decoration: none; color: inherit">
             <img
               src="https://images.unsplash.com/photo-1505569127510-bde1536937bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRyYXdpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
               alt="img"

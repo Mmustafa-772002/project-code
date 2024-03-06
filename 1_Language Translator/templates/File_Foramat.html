@@ -4,9 +4,12 @@
   <head>
     <meta charset="utf-8" />
     <title>File Format</title>
-    <link rel="stylesheet" href="File_Foramat.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/File_Foramat.css') }}">
+  
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="File_Foramat.js" defer></script>
+    
+    <script src="{{ url_for('static', filename='js/File_Foramat.js' ) }}" defer></script>
+  
   </head>
   <body>
     <div class="wrapper">

@@ -4,7 +4,8 @@
   <head>
     <meta charset="utf-8" />
     <title>Notes Tab</title>
-    <link rel="stylesheet" href="Notes.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Notes.css') }}">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Iconscout Link For Icons -->
     <link
@@ -40,7 +41,7 @@
         <p>Add new note</p>
       </li>
     </div>
-
-    <script src="Notes.js"></script>
+    <script src="{{ url_for('static', filename='js/Notes.js' ) }}" defer></script>
+    
   </body>
 </html>

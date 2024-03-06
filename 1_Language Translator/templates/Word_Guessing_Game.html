@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <title>Guess a Word Game</title>
-    <link rel="stylesheet" href="Word_Guessing_Game.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Word_Guessing_Game.css') }}">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
@@ -20,8 +21,7 @@
         <button class="reset-btn">Reset Game</button>
       </div>
     </div>
-
-    <script src="js/Word_Guessing_Game_words.js"></script>
-    <script src="js/Word_Guessing_Game.js"></script>
+    <script src="{{ url_for('static', filename='js1/Word_Guessing_Game_words.js' ) }}" ></script>
+    <script src="{{ url_for('static', filename='js1/Word_Guessing_Game.js' ) }}" ></script>
   </body>
 </html>

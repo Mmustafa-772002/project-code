@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome Quiz</title>
-    <link rel="stylesheet" href="Quiz.Css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Quiz.css') }}">
+
     <!-- FontAweome CDN Link for Icons-->
     <link
       rel="stylesheet"
@@ -85,9 +86,10 @@
     </div>
 
     <!-- Inside this JavaScript file I've inserted Questions and Options only -->
-    <script src="js/Quiz_questions.js"></script>
-
-    <!-- Inside this JavaScript file I've coded all Quiz Codes -->
-    <script src="js/Quiz.js"></script>
+ 
+    <script src="{{ url_for('static', filename='js1/Quiz_questions.js' ) }}" ></script>
+    <script src="{{ url_for('static', filename='js1/Quiz.js' ) }}" ></script>
+    
+    
   </body>
 </html>

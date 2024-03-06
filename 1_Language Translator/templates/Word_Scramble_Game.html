@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8" />
     <title>Word Scramble Game</title>
-    <link rel="stylesheet" href="Word_Scramble_Game.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Word_Scramble_Game.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="js/Word_Scramble_Game_words.js" defer></script>
-    <script src="js/Word_Scramble_Game.js" defer></script>
+    <script src="{{ url_for('static', filename='js1/Word_Scramble_Game_words.js' ) }}" defer ></script>
+    <script src="{{ url_for('static', filename='js1/Word_Scramble_Game.js' ) }}" defer></script>
   </head>
   <body>
     <div class="container">

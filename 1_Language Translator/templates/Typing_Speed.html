@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Typing Speed Test Game</title>
-    <link rel="stylesheet" href="Typing_Speed.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Typing_Speed.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
@@ -37,8 +37,8 @@
         </div>
       </div>
     </div>
-
-    <script src="js/Typing_Speed_paragraphs.js"></script>
-    <script src="js/Typing_Speed.js"></script>
+    <script src="{{ url_for('static', filename='js1/Typing_Speed_paragraphs.js' ) }}" ></script>
+    <script src="{{ url_for('static', filename='js1/Typing_Speed.js' ) }}" ></script>
+    
   </body>
 </html>

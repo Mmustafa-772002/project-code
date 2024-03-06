@@ -4,7 +4,9 @@
   <head>
     <meta charset="utf-8" />
     <title>Quote Generator</title>
-    <link rel="stylesheet" href="Quote_Generator.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Quote_Generator.css') }}">
+
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
@@ -39,7 +41,7 @@
         </div>
       </div>
     </div>
-
-    <script src="Quote_Generator.js"></script>
+    <script src="{{ url_for('static', filename='js/Quote_Generator.js' ) }}" ></script>
+    
   </body>
 </html>
