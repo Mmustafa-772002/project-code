@@ -1,144 +1,264 @@
-{% extends "MyAPI/base.html" %}
-
-{% load static %}
-
-{% block content %}
+{% extends "MyAPI/base.html" %} {% load static %} {% block content %}
 
 <div id="navstrip">
-    <div class="navbox">
-        <div class="option">
-            <a href="{% url 'about' %}">
-                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                <span>About</span>
-            </a>
-        </div>
+  <div class="navbox">
+    <div class="option">
+      <a href="{% url 'about' %}">
+        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+        <span>About</span>
+      </a>
     </div>
+  </div>
 </div>
 <div class="row">
-    <div class="col-md-1 col-lg-3 col-xl-3 col-sm-1 col-1"></div>
-    <div class="col-md-10 col-lg-6 col-xl-6 col-sm-10 col-10">
-        <h1>Language Translation</h1>
-        <br><br>
-        <form method="POST" enctype="multipart/form-data" id="translationForm">
-            {% csrf_token %}
+  <div class="col-md-1 col-lg-3 col-xl-3 col-sm-1 col-1"></div>
+  <div class="col-md-10 col-lg-6 col-xl-6 col-sm-10 col-10">
+    <h1>Language Translation</h1>
+    <br /><br />
+    <form method="POST" enctype="multipart/form-data" id="translationForm">
+      {% csrf_token %}
 
-            <div class="form-group">
-                <label for="fileInput">Upload Text File</label>
-                <input type="file" class="form-control-file" id="fileInput" accept=".txt">
-            </div>
-            <div class="form-group">
-                <label for="text">Text</label>
-                <textarea name="text" class="form-control" id="text" autofocus="true" required></textarea>
-            </div>
-            <div class="row">
-                <div class="form-group col-xl-5 col-lg-5">
-                    <label for="lang1">From</label>
-                    <select class="form-control" id="lang1" name="lang1">
-                        <option value="ar">Arabic</option>
-                        <option value="bn">Bengali</option>
-                        <option value="en" selected>English</option>
-                        <option value="fr">French</option>
-                        <option value="de">German</option>
-                        <option value="hi">Hindi</option>
-                        <option value="it">Italian</option>
-                        <option value="ja">Japanese</option>
-                        <option value="pt">Portuguese</option>
-                        <option value="ru">Russian</option>
-                        <option value="es">Spanish</option>
-                        <option value="ta">Tamil</option>
-                        <option value="te">Telugu</option>
-                    </select>
-                </div>
-                <div class="form-group col-xl-5 col-lg-5">
-                    <label for="lang2">to</label>
-                    <select class="form-control" id="lang2" name="lang2">
-                        <option value="ar">Arabic</option>
-                        <option value="bn">Bengali</option>
-                        <option value="en">English</option>
-                        <option value="fr">French</option>
-                        <option value="de">German</option>
-                        <option value="hi" selected>Hindi</option>
-                        <option value="it">Italian</option>
-                        <option value="ja">Japanese</option>
-                        <option value="pt">Portuguese</option>
-                        <option value="ru">Russian</option>
-                        <option value="es">Spanish</option>
-                        <option value="ta">Tamil</option>
-                        <option value="te">Telugu</option>
-                    </select>
-                </div>
-                <div class="col-xl-2 col-lg-2 butn">
-                    <button type="submit" class="btn btn-dark">Translate</button>
-                </div>
-            </div>
-        </form>
-        <br>
-        {% if messages %}
-        <center>
-            <div class="alert alert-light" style="max-width: 500px;">
-                {% for message in messages %}
-                <p align="center">{{ message }}</p>
-                {% endfor %}
-            </div>
-        </center>
-        {% endif %}
-    </div>
-    <div class="col-md-1 col-lg-3 col-xl-3 col-sm-1 col-1"></div>
-</div>
-
-<!-- Another form with a different textarea -->
-{% comment %} <form method="POST">
-    {% csrf_token %}
-    <div class="form-group">
-        <label for="text2">Text</label>
-        <textarea name="text2" class="form-control" id="text2" autofocus="true" required></textarea>
-    </div>
-    <div class="row">
+      <div class="form-group">
+        <label for="fileInput">Upload Text File</label>
+        <input
+          type="file"
+          class="form-control-file"
+          id="fileInput"
+          accept=".txt"
+        />
+      </div>
+      <div class="form-group">
+        <label for="text">Text</label>
+        <textarea
+          name="text"
+          class="form-control"
+          id="text"
+          autofocus="true"
+          required
+        ></textarea>
+      </div>
+      <div class="row">
         <div class="form-group col-xl-5 col-lg-5">
+          <label for="lang1">From</label>
+          <select class="form-control" id="lang1" name="lang1">
+            <option value="ar">Arabic</option>
+            <option value="bn">Bengali</option>
+            <option value="en" selected>English</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="hi">Hindi</option>
+            <option value="it">Italian</option>
+            <option value="ja">Japanese</option>
+            <option value="pt">Portuguese</option>
+            <option value="ru">Russian</option>
+            <option value="es">Spanish</option>
+            <option value="ta">Tamil</option>
+            <option value="te">Telugu</option>
+          </select>
+        </div>
+        <div class="form-group col-xl-5 col-lg-5">
+          <label for="lang2">to</label>
+          <select class="form-control" id="lang2" name="lang2">
+            <option value="ar">Arabic</option>
+            <option value="bn">Bengali</option>
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="hi" selected>Hindi</option>
+            <option value="it">Italian</option>
+            <option value="ja">Japanese</option>
+            <option value="pt">Portuguese</option>
+            <option value="ru">Russian</option>
+            <option value="es">Spanish</option>
+            <option value="ta">Tamil</option>
+            <option value="te">Telugu</option>
+          </select>
+        </div>
+        <div
+          class="col-xl-2 col-lg-2 col-md-9 col-sm-12 col-12 text-center mt-4"
+        >
+          <button type="submit" class="btn btn-dark btn-block">
+            Translate
+          </button>
+        </div>
+      </div>
+    </form>
+    <br />
+    {% if messages %}
+    <div class="row">
+      <div class="col-md-1 col-lg-3 col-xl-3 col-sm-1 col-1"></div>
+      <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12">
+      
+      
+        <br /><br />
+        <form method="POST" enctype="multipart/form-data" id="translationForm">
+          {% csrf_token %}
+
+          <!-- Existing form fields... -->
+
+          <div class="row">
+            <!-- Existing language selection fields... -->
+          </div>
+        </form>
+
+        <br />
+
+        <!-- Display messages in textarea -->
+        <div class="form-group mx-auto text-center" style="max-width: 1000px">
+          <label for="result">Result</label>
+          <textarea name="result" class="form-control" id="result" readonly>
+{{ messages|join:"\n" }}</textarea
+          >
+        </div>
+<!-- Save button for the textarea content -->
+<div class="form-group text-center mt-3">
+    <label for="saveFilename">Save As:</label>
+    <div class="input-group">
+      
+        <input type="text" class="form-control" id="saveFilename" placeholder="Enter filename">
+        <div class="input-group-prepend">
+            <select class="custom-select" id="fileFormat">
+                <option value="txt">Text (.txt)</option>
+                <option value="html">HTML (.html)</option>
+                <option value="ppt">PowerPoint (.ppt)</option>
+                <option value="doc">Word Document (.doc)</option>
+            </select>
+        </div>
+    </div>
+    <button type="button" class="btn btn-success mt-2" onclick="saveToFile()">Save</button>
+</div>
+       
+        
+
+        <div class="col-md-1 col-lg-3 col-xl-3 col-sm-1 col-1"></div>
+      </div>
+      {% endif %}
+
+      <!-- JavaScript for saving textarea content to a file -->
+      <script>
+        function saveToFile() {
+            var resultTextarea = document.getElementById('result');
+            var content = resultTextarea.value;
+        
+            var saveFilenameInput = document.getElementById('saveFilename');
+            var userFilename = saveFilenameInput.value.trim();
+        
+            // If the user didn't provide a filename, use a default name
+            var filename = userFilename || 'translation_result';
+        
+            // Get selected file format
+            var fileFormatSelect = document.getElementById('fileFormat');
+            var selectedFormat = fileFormatSelect.value;
+        
+            // Append file extension based on the selected format
+            filename += '.' + selectedFormat;
+        
+            // Create a Blob from the content
+            var blob = new Blob([content], { type: 'text/plain' });
+        
+            // Create a link element
+            var link = document.createElement('a');
+        
+            // Set the link properties
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+        
+            // Trigger a click to download the file
+            link.click();
+        }
+        
+
+        function translate() {
+          const textArea = document.getElementById("text");
+          const resultArea = document.getElementById("result");
+          resultArea.textContent = textArea.value;
+          updateTextareaHeight(resultArea);
+        }
+
+        function updateTextareaHeight(textArea) {
+          textArea.style.height = "auto";
+          textArea.style.height = textArea.scrollHeight + "px";
+        }
+      </script>
+
+      <!-- Another form with a different textarea -->
+      {% comment %}
+      <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="text2">Text</label>
+          <textarea
+            name="text2"
+            class="form-control"
+            id="text2"
+            autofocus="true"
+            required
+          ></textarea>
+        </div>
+        <div class="row">
+          <div class="form-group col-xl-5 col-lg-5">
             <label for="lang1">From</label>
             <select class="form-control" id="lang1" name="lang1">
-                <!-- Options for language selection -->
+              <!-- Options for language selection -->
             </select>
-        </div>
-        <div class="form-group col-xl-5 col-lg-5">
+          </div>
+          <div class="form-group col-xl-5 col-lg-5">
             <label for="lang2">to</label>
             <select class="form-control" id="lang2" name="lang2">
-                <!-- Options for language selection -->
+              <!-- Options for language selection -->
             </select>
-        </div>
-        <div class="col-xl-2 col-lg-2 butn">
+          </div>
+          <div class="col-xl-2 col-lg-2 butn">
             <button type="submit" class="btn btn-dark">Translate</button>
+          </div>
         </div>
+      </form>
+      <br />
+      {% if messages %}
+      <center>
+        <div class="alert alert-light" style="max-width: 500px">
+          {% for message in messages %}
+          <p align="center">{{ message }}</p>
+          {% endfor %}
+        </div>
+      </center>
+      {% endif %}
+
+      <div class="col-md-1 col-lg-3 col-xl-3 col-sm-1 col-1"></div>
     </div>
-</form>
-<br>
-{% if messages %}
-<center>
-    <div class="alert alert-light" style="max-width: 500px;">
-        {% for message in messages %}
-        <p align="center">{{ message }}</p>
-        {% endfor %}
-    </div>
-</center>
-{% endif %}
+    {% endcomment %}
 
-<div class="col-md-1 col-lg-3 col-xl-3 col-sm-1 col-1"></div>
-</div> {% endcomment %}
+    <script>
+      document
+        .getElementById("fileInput")
+        .addEventListener("change", function (event) {
+          const fileInput = event.target;
+          const textArea = document.getElementById("text");
 
-<script>
-    document.getElementById('fileInput').addEventListener('change', function (event) {
-        const fileInput = event.target;
-        const textArea = document.getElementById('text');
+          const file = fileInput.files[0];
+          const reader = new FileReader();
 
-        const file = fileInput.files[0];
-        const reader = new FileReader();
-
-        reader.onload = function (e) {
+          reader.onload = function (e) {
             textArea.value = e.target.result;
-        };
+            updateTextareaHeight(textArea);
+          };
 
-        reader.readAsText(file);
-    });
-</script>
+          reader.readAsText(file);
+        });
 
-{% endblock %}
+      function translate() {
+        const textArea = document.getElementById("text");
+        const resultArea = document.getElementById("result");
+        resultArea.textContent = textArea.value;
+        updateTextareaHeight(textArea);
+      }
+
+      function updateTextareaHeight(textArea) {
+        textArea.style.height = "auto";
+        textArea.style.height = textArea.scrollHeight + "px";
+      }
+    </script>
+
+    {% endblock %}
+  </div>
+</div>
