@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.contrib import messages
-
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 from . forms import TextLangForm
+from django.shortcuts import render
+from django.http import HttpResponse
 
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
@@ -47,3 +50,28 @@ def translated(request):
 
 def about(request):
 	return render(request, 'MyAPI/about.html')
+
+def save_file_on_server(request):
+    if request.method == 'POST':
+        content = request.POST.get('content', '')
+        filename = request.POST.get('filename', 'translation_result.txt')
+
+        # Specify the desired path on the server
+        save_path = 'D:/Final project report/final project/project code/2_Text extraction/result/'
+
+        # Combine the path and filename
+        full_path = os.path.join(save_path, filename)
+
+        # Save the content to the file
+        with open(full_path, 'w') as file:
+            file.write(content)
+
+        return JsonResponse({'status': 'success', 'message': 'File saved successfully on the server.'})
+
+    return JsonResponse({'status': 'error', 'message': 'Invalid request method.'})
+
+
+
+def save_file(request):
+    # Your save_file logic goes here
+    return HttpResponse("File saved successfully.")

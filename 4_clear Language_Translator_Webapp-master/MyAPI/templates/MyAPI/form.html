@@ -4,8 +4,8 @@
   <div class="navbox">
     <div class="option">
       <a href="{% url 'about' %}">
-        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-        <span>About</span>
+        
+        
       </a>
     </div>
   </div>
@@ -88,8 +88,6 @@
     <div class="row">
       <div class="col-md-1 col-lg-3 col-xl-3 col-sm-1 col-1"></div>
       <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12">
-      
-      
         <br /><br />
         <form method="POST" enctype="multipart/form-data" id="translationForm">
           {% csrf_token %}
@@ -106,80 +104,132 @@
         <!-- Display messages in textarea -->
         <div class="form-group mx-auto text-center" style="max-width: 1000px">
           <label for="result">Result</label>
-          <textarea name="result" class="form-control" id="result" readonly>
-{{ messages|join:"\n" }}</textarea
+          <textarea
+            name="result"
+            class="form-control"
+            id="result"
+            rows="10"
+            style="text-align: justify"
           >
+              {{ messages|join:"\n" }}
+          </textarea>
         </div>
-<!-- Save button for the textarea content -->
-<div class="form-group text-center mt-3">
-    <label for="saveFilename">Save As:</label>
-    <div class="input-group">
-      
-        <input type="text" class="form-control" id="saveFilename" placeholder="Enter filename">
-        <div class="input-group-prepend">
-            <select class="custom-select" id="fileFormat">
+        <!-- Save button for the textarea content -->
+        <div class="form-group text-center mt-3">
+          <label for="saveFilename">Save As:</label>
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              id="saveFilename"
+              placeholder="Enter filename"
+            />
+            <div class="input-group-prepend">
+              <select class="custom-select" id="fileFormat">
                 <option value="txt">Text (.txt)</option>
                 <option value="html">HTML (.html)</option>
+                <option value="json">JSON (.json)</option>
+                <option value="png">Image (.png)</option>
                 <option value="ppt">PowerPoint (.ppt)</option>
                 <option value="doc">Word Document (.doc)</option>
-            </select>
+              </select>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn btn-success mt-2"
+            onclick="saveToFile()"
+          >
+            Save
+          </button>
         </div>
-    </div>
-    <button type="button" class="btn btn-success mt-2" onclick="saveToFile()">Save</button>
-</div>
-       
-        
 
         <div class="col-md-1 col-lg-3 col-xl-3 col-sm-1 col-1"></div>
       </div>
       {% endif %}
 
-      <!-- JavaScript for saving textarea content to a file -->
+      <!-- Add this to the head section of your HTML -->
+      <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
       <script>
         function saveToFile() {
-            var resultTextarea = document.getElementById('result');
+            var resultTextarea = document.getElementById("result");
             var content = resultTextarea.value;
-        
-            var saveFilenameInput = document.getElementById('saveFilename');
+    
+            var saveFilenameInput = document.getElementById("saveFilename");
             var userFilename = saveFilenameInput.value.trim();
-        
-            // If the user didn't provide a filename, use a default name
-            var filename = userFilename || 'translation_result';
-        
-            // Get selected file format
-            var fileFormatSelect = document.getElementById('fileFormat');
+            var filename = userFilename || "translation_result";
+    
+            var fileFormatSelect = document.getElementById("fileFormat");
             var selectedFormat = fileFormatSelect.value;
-        
-            // Append file extension based on the selected format
             filename += '.' + selectedFormat;
-        
-            // Create a Blob from the content
-            var blob = new Blob([content], { type: 'text/plain' });
-        
+    
             // Create a link element
-            var link = document.createElement('a');
-        
-            // Set the link properties
-            link.href = URL.createObjectURL(blob);
-            link.download = filename;
-        
-            // Trigger a click to download the file
-            link.click();
+            var link = document.createElement("a");
+    
+            if (
+                selectedFormat === "txt" ||
+                selectedFormat === "json" ||
+                selectedFormat === "html" ||
+                selectedFormat === "ppt" ||
+                selectedFormat === "doc"
+            ) {
+                // For text, JSON, HTML, PowerPoint, and Word Document formats, create a Blob from the content
+                var blob = new Blob([content], { type: "text/plain" });
+    
+                // Set the link properties
+                link.href = URL.createObjectURL(blob);
+                link.download = filename;
+    
+                // Trigger a click to download the file
+                link.click();
+            } else if (selectedFormat === "png") {
+                // For PNG format, convert the content to an image using html2canvas
+                html2canvas(resultTextarea).then(function (canvas) {
+                    // Convert the canvas to a data URL
+                    var imageDataURL = canvas.toDataURL("image/png");
+    
+                    // Create a Blob from the data URL
+                    var blob = dataURLtoBlob(imageDataURL);
+    
+                    // Set the link properties
+                    link.href = URL.createObjectURL(blob);
+                    link.download = filename;
+    
+                    // Trigger a click to download the image
+                    link.click();
+    
+                    // Save file to the server
+                    saveFileOnServer(content, filename, imageDataURL);
+                });
+            } else {
+                alert("Error: Unsupported file format.");
+            }
         }
+    
+        function dataURLtoBlob(dataURL) {
+            var byteString = atob(dataURL.split(",")[1]);
+            var ab = new ArrayBuffer(byteString.length);
+            var ia = new Uint8Array(ab);
+            for (var i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+            }
+            return new Blob([ab], { type: "image/png" });
+        }
+    
         
-
         function translate() {
-          const textArea = document.getElementById("text");
-          const resultArea = document.getElementById("result");
-          resultArea.textContent = textArea.value;
-          updateTextareaHeight(resultArea);
+            const textArea = document.getElementById("text");
+            const resultArea = document.getElementById("result");
+            resultArea.textContent = textArea.value;
+            updateTextareaHeight(resultArea);
         }
-
+    
         function updateTextareaHeight(textArea) {
-          textArea.style.height = "auto";
-          textArea.style.height = textArea.scrollHeight + "px";
+            textArea.style.height = "auto";
+            textArea.style.height = textArea.scrollHeight + "px";
         }
-      </script>
+    </script>
+    
 
       <!-- Another form with a different textarea -->
       {% comment %}

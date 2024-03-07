@@ -19,8 +19,12 @@ from django.conf.urls.static import static
 from django.conf import settings
 from MyAPI import views
 
+from django.urls import path
+from MyAPI.views import save_file 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('MyAPI.urls')),
+    path('save_file/', save_file, name='save_file'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
