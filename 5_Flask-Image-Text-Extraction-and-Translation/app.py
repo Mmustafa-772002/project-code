@@ -14,14 +14,14 @@ image = None
 lng = {  'Bengali': 'bn', 'English': 'en','Gujarati': 'gu', 'Hindi': 'hi', 'Kannada': 'kn','Malayalam': 'ml', 'Marathi': 'mr', 'Nepali': 'ne', 'Odia': 'or','Punjabi': 'pa', 'Tamil': 'ta', 'Telugu': 'te', 'Urdu': 'ur',
     }
 
-# def resu(file):
-#     global data
-#     reader = easyocr.Reader(['en'])
-#     result = reader.readtext(file)
-#     if len(result)<1:
-#         result= ["No data found"]
-#     data = [i[1] for i in result]
-#     return data
+def resu(file):
+    global data
+    reader = easyocr.Reader(['en'])
+    result = reader.readtext(file)
+    if len(result)<1:
+        result= ["No data found"]
+    data = [i[1] for i in result]
+    return data
 
 def ocr(val):
     # print(image)
@@ -29,9 +29,9 @@ def ocr(val):
     reader = easyocr.Reader([tnl[0]])
     result = reader.readtext(image)
 
-    # if len(result)<1:
-    #     result= ["No data found"]
-    # data = [i[1] for i in result]
+    if len(result)<1:
+        result= ["No data found"]
+    data = [i[1] for i in result]
 
     txt=[]
     for bbox, text, prob in result:
@@ -63,30 +63,30 @@ def img_share():
     # image=cv2.resize(image, (480, 480))
     return Response(image_process(image), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-# @app.route('/trans/', methods=['POST'])
-# def trans():
-#     if request.method == "POST":
-#         value = request.form.get("value")
-#         if value!=tnl[1]:
-#             tnl[1]=value
-#             for i in range(len(data)):
-#                 data[i]=tss.google(data[i], tnl[0], tnl[1])
-#     return render_template('result.html',data=data)
+@app.route('/trans/', methods=['POST'])
+def trans():
+    if request.method == "POST":
+        value = request.form.get("value")
+        if value!=tnl[1]:
+            tnl[1]=value
+            for i in range(len(data)):
+                data[i]=tss.google(data[i], tnl[0], tnl[1])
+    return render_template('result.html',data=data)
 
 
 @app.route('/')
 def home():
     return render_template('image.html',lng=lng.keys())
 
-# @app.route('/upload', methods=['POST'])
-# def drop_image():
-#     if request.method == 'POST':
-#         file = request.files['image']
-#         path = file.filename
-#         # print(1)
-#         file.save(path)
-#         data = ocr(0)
-#         return render_template('result.html',data=data)
+@app.route('/upload', methods=['POST'])
+def drop_image():
+    if request.method == 'POST':
+        file = request.files['image']
+        path = file.filename
+        print(1)
+        file.save(path)
+        data = ocr(0)
+        return render_template('result.html',data=data)
     
 def allowed_file(filename):
     ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'gif'}

@@ -1,0 +1,567 @@
+K. E. Society’s 
+Rajarambapu Institute of Technology, Rajaramnagar 
+(An Autonomous Institute, affiliated to SUK) 
+ 
+Report on “Kalyani RIT Quantum – 2023” 
+ 
+We have organizing the "Kalyani-RIT-Hackathon-2k23" National Technical Symposium in 
+association with Bharat Forge from last Fourteen years. This event provides a platform for 
+students to address societal and industrial issues. The association of Bharat Forge with the RIT-
+Hackathon-2k23 event has given the event a new depth and a distinct image, and each year the 
+student response to these activities is increasing. 
+ 
+This year, we have arranged one events RIT Hackathon 2023. On June 16 and 17, 2023, a 
+national-level event titled "RIT-HACKATHON-2K23" has been organized in the first event 
+category.  
+ I. RIT HACKATHON - 2K23 
+ 
+Rajarambapu Institute of Technology (An Autonomous Institute affiliated to 
+SUK), Rajaramnagar in association with Bharat Forge Pvt. Ltd., Pune had organized 
+RIT HACKATHON-2K23, a national level event of 24 hours coding on 16th and 17th 
+June 2023.  
+This event is the platform for the students to explore the creative and 
+entrepreneurial spirit amongst one and all.  The RIT-Hackathon 2023 was planned with 
+five tracks in two phases, Electrical Energy System, Embedded Systems & IoT, 
+Applications of AI & ML, Mechanical & Mechatronics Systems, and Robotics & 
+Innovation. The first phase consists of submitting the innovative solutions for the 
+problems selected for RIT-Hackathon. For the second phase, ideas were shortlisted and 
+participants invited for 24 hours competition.  
+ For RIT-Hackathon 2K23, we have received a very good response to the 
+event. The 110+ groups were registered for Phase –I of hackathon and after Phase-I 
+result 80+ groups were participated in a 24 hours final round. The prizes worth Rs. 1.0 
+lakhs were awarded to winners. 
+  
+The student community is an integral part of undertaking development projects 
+owing to their innovative and enthusiastic approach to a problem. To harness their 
+talent, RIT-Hackathon 2023 is a national-level event that provides the opportunity to 
+work on real-time problems faced by society and industry. Being a national platform, 
+this event provides a runway to innovative ideas from where they can take off and soar 
+high. The idea behind the 24 hours Hackathon was to attract talented brains to identify 
+innovative solutions for Society and Industry related problems.  
+The event was inaugurated on 16th June 2023 by Shri Santosh Joshi ((Research 
+Specialist, Florida International University)) was present as the Chief Guest for the 
+Inaugural Function, Honourable Shri  R.D Sawant (Secretary, Kasegaon Education 
+Society, Sakharale) and Honourable Shri. Shamrao Patil(Anna) (Chairman, 
+Rajarambapu Co-op Bank Ltd., and Member BOG, RIT) was present as a Guest of 
+Honour. Incharge Director Dr. H.S Jadhav addressed the gathering with his 
+inspirational speech. Dr. N.V. Dharwadkar (HOD CSE) addressed the gathering and 
+briefed about the journey of the RIT-Hackathon. The layout of the event was given by 
+Mr. Taranpreet Singh, (Coordinator RIT-HACKATHON 2K23). Dr. Santosh Joshi 
+K. E. Society’s 
+Rajarambapu Institute of Technology, Rajaramnagar 
+(An Autonomous Institute, affiliated to SUK) 
+ 
+addressed gathering with his inspirational speech and addressed about Post-graduate, 
+research opportunities in abroad. All Deans, HoDs, faculty members and, participants 
+were present for the function. Finally, Prof. V.M Mokashi (Assistant Professor, CSE 
+Dept.) has expressed the vote of thanks.  
+Valedictory Function was held on 17th June 2023. Dr. Santosh Honnagunti 
+(Chief Operating Officer, Hansen Technologies, India), were Chief Guest of 
+Valedictory Function. Dr. Santosh Honnagunti addressed the students about 
+opportunities, said inspirational words and shared his experiences. Mr. Taranpreet 
+Singh and Mr. V.M Mokashi (Event Coordinator), Dr. N. V. Dharwadkar (HoD CSE), 
+Dr. L. M. Jugulkar (Dean Student Development), & all faculty members were present 
+for the Prize distribution ceremony. Finally, the vote of thanks was given by Prof. V.M 
+Moakshi.  
+Total Cash Prizes worth Rs. 57,000/- were given among five tracks in two 
+phases, Electrical Energy System, Embedded Systems & IoT, Applications of AI & 
+ML, Mechanical & Mechatronics Systems, and Robotics & Innovation.   
+ 
+Table: DETAILS OF PARTICIPANTS 
+Event Phases 
+Total number of 
+Groups Registered 
+Total number of Students Participated 
+Phase I 
+116 
+345 
+Phase II 
+82 
+246 
+  
+Table: NAME OF THE TRACKS 
+1. Electrical Energy System 
+2. Embedded Systems and IoT 
+3. Applications of AI & ML 
+4. Mechanical & Mechatronics Systems 
+5. Robotics & Innovation 
+ 
+ 
+Table: CHIEF GUESTS 
+RIT Hackathon 
+2020 Function 
+Chief Guest 
+Guest Introduction 
+Inaugural 
+Function 
+Dr. Santosh Joshi 
+Research Specialist II 
+Florida International 
+University, Miami, Florida 
+Over 17 years of professional experience in 
+Academia and IT Industry as a Research 
+Specialist II with expertise in Applied Research 
+in the area of Cyber Security, Artificial 
+Intelligence, Big Data, Software Engineering, 
+Software Architecture and Database Design. 
+Extensive experience in the development, 
+implementation 
+and integration strategies 
+towards a team-oriented environment, utilizing 
+quantitative and qualitative analytical skills, 
+with ease in communicating /converting client’s 
+K. E. Society’s 
+Rajarambapu Institute of Technology, Rajaramnagar 
+(An Autonomous Institute, affiliated to SUK) 
+ 
+vague/non-technical 
+requirements 
+into 
+precise/concise representation to the team. 
+Valedictory 
+Function 
+Dr. Santosh Honnagunti,  
+Chief Operating Officer, 
+Hansen Pvt. Ltd., 
+Bengaluru.   
+ 
+He completed Doctorate in Telecom & 
+Management, has 20+ years of experience in 
+Telecom 
+Protocol 
+Stack 
+Development, 
+Telecom OSS & BSS, Utilities & Smart Cities. 
+Worked for telecoms in Europe, Middle East, 
+APAC, South Africa and US. He has been 
+working in the following areas of Product 
+development, and Project management for 
+GSM/GPRS/PSTN/Satellite/CableMSO/ 
+ADSL/ GPON/ Broadband. 
+ 
+ 
+Table: List of Internal and External Evaluators: 
+Evaluators 
+Name of the Person 
+Designation and Name of Organization 
+External 
+Evaluators 
+Dr.Narayan D.G. 
+ Professor, KLE University, Hubali 
+Dr. M.U. Nagaral  
+Professor, B.L.D.E college of Engineering, Bijapur 
+Mr. Dnyanesh Deshpande  
+Product Delivery Manager Mastercard, Pune 
+Amir Pathan 
+Manager, Shetkari Winkari sahakari Sutgirni islampur 
+Rushikesh Pathak 
+Senior Consultant, NetApp data storage USA 
+Internal 
+Evaluators 
+Dr. N.V.Dharwadkar 
+HOD, Department of Computer Science & 
+Engineering, RIT 
+Prof. Vijay Kalmani 
+Associate Professor, Department of Information 
+Technology , RIT 
+Prof. R A Metri  
+Assistant Prof Electrical Engineering Department 
+Prof.R.T.Patil 
+Associate Professor, Department of Electronic & 
+Telecommunication , RIT 
+Prof. U.A. Kamerikar 
+Assistant Professor, Department of Electronic & 
+Telecommunication , RIT 
+Prof. R.M Shinde 
+Associate Professor, Department of Mechanical 
+Engineering , RIT 
+ 
+ 
+Table: List of Track-wise Winners 
+Track 
+Prize 
+Project Title 
+Name of Participants 
+Name of Institute 
+Applica
+tions of 
+AI & 
+ML, 
+1st Prize of 
+Rs.8000/- 
+First Prize-AIML-23 : Real 
+time  inspection of fabric 
+defects in the textile industry 
+Esha Amit Arora, 
+Abhishek Sakhave, 
+Aishwarya Naik 
+ 
+DKTE, Ichalkarnji 
+ 
+2nd Prize of 
+Rs.2750/- 
+Second Prize :AIML-56  
+Bus Entry scanning and 
+record keeping application 
+using python CV2 and 
+machine learning 
+ 
+Anshul Bhimnath, 
+Sanket Bodhale, Sejal 
+Patil,Chinmai Arekar 
+Rajarambapu 
+Institute of 
+Technology, 
+Rajaramnagar 
+K. E. Society’s 
+Rajarambapu Institute of Technology, Rajaramnagar 
+(An Autonomous Institute, affiliated to SUK) 
+ 
+2nd Prize of 
+Rs.2750/- 
+Second Prize :AIML-51 
+Automated Attendance 
+system   
+Shubham Halade & 
+Sanket Nikam 
+Rajarambapu 
+Institute of 
+Technology, 
+Rajaramnagar 
+3rd Prize of 
+Rs.1750/- 
+Third Prize:AIML-10  
+Generation of Images from 
+text using 2 stage GANs  or 
+Diffusion Models 
+Vikram Velankar & 
+Neha Basugude 
+Rajarambapu 
+Institute of 
+Technology, 
+Rajaramnagar 
+3rd Prize of 
+Rs.1750/- 
+Third Prize:AIML-04 
+Sign Language Detection 
+ 
+Divya Dattatray Mane, 
+Shraddha Giri 
+ 
+Rajarambapu 
+Institute of 
+Technology, 
+Rajaramnagar 
+Embedd
+ed 
+Systems 
+& IoT 
+1st Prize of 
+Rs.8000/- 
+First Prize :EMBIOT - 19: 
+Driver Drowsiness Detection 
+Mustafa Mansur 
+Masuldar 
+ 
+N. B. Navale 
+Sinhgad College 
+of Engineering, 
+Solapur 
+2nd Prize of 
+Rs.2750/- 
+Second Prize:EMBIOT - 40: 
+Hexapod robot (for spying) 
+Dhwij Makarand Patil 
+Rajarambapu 
+Institute of 
+Technology, 
+Rajaramnagar 
+2nd Prize of 
+Rs.2750/- 
+Second Prize:EMBIOT – 11 
+Smart Medicine Box. 
+Aniket Vilas Patil 
+ 
+PVPIT,Budhgaon 
+ 
+3rd Prize of 
+Rs.3500/- 
+Third Prize:EMBIOT - 4: 
+Intelligent Traffic rule 
+violation detection and 
+enforcement system 
+Ashish Maruti Chougule 
+ 
+ 
+Sharad institute of 
+technology,yadrav 
+ 
+Electric
+al 
+Energy 
+System 
+ 
+1st Prize of 
+Rs.8000/- 
+First Prize-EES_04 
+QR based EV charging 
+station 
+Harish Londhe 
+ 
+Rajarambapu 
+Institute 
+of 
+Technology, 
+Rajaramnagar 
+2nd Prize of 
+Rs.5500/- 
+Second Prize : EES_08 
+Solar Tracking without 
+Power 
+Shradddha Bharat Patil 
+. 
+DKTE, Ichalkarnji 
+ 
+3rd Prize of 
+Rs.3500/- 
+Third Prize: EES_09 
+Solar Panel Cleaning Robot 
+Salmankhan 
+Jamsherkhan Pathan 
+PVPIT,Budhgaon 
+ 
+Mechani
+cal & 
+Mechatr
+onics 
+Systems 
+2nd Prize of 
+Rs.5500/- 
+Second Prize  
+MECH-02 
+Efficient smart Braces for 
+life threatening disease 
+Paraplegia. 
+Shravani Muttur  
+Sharad institute of 
+techonology 
+college of 
+engineering, 
+yadra, ichalkaranji 
+ 
+ 
+ 
+ 
+ 
+K. E. Society’s 
+Rajarambapu Institute of Technology, Rajaramnagar 
+(An Autonomous Institute, affiliated to SUK) 
+ 
+The glimpses of events are attached herewith. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Inaugural Function: Dr. Santosh Joshi, Hon. 
+Shri. Shamrao Patil, Hon. Shri R.D. Sawant,  
+Dr. H.S.Jadhav. 
+Inaugural Function: Felicitation of Guest of 
+Honor: Shri. R.D. Sawant   by Dr.H. S. 
+Jadhav. 
+Inaugural Function: Felicitation of Chief 
+Guest: Dr. Santosh Joshi by Hon. Shri 
+R.D Sawant Sir. 
+Inaugural Function: Felicitation of Guest of 
+Honor: Shri. Shamrao Patil (Anna)   by Dr. 
+L. M. Jugulkar 
+ 
+Inaugural Function: Felicitation of RIT- 
+Director by Dr. N.V.Dharawadkar 
+Dr. N.V. Dharwadkar (HOD CSE) 
+addressing the gathering and briefed 
+about the journey of the RIT-
+Hackathon. 
+K. E. Society’s 
+Rajarambapu Institute of Technology, Rajaramnagar 
+(An Autonomous Institute, affiliated to SUK) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Inaugural Function: Director Dr. 
+H.S.Jadhav addressing the gathering. 
+Inaugural Function:  Chief Guest, all dignitaries, 
+Faculty members and articipants in Inaugural 
+Function of RIT ACKATHON - 2K23. 
+The layout of the event was given by 
+R.Taranpreet Singh,  
+(Coordinator RIT-HACKATHON 2K23). 
+Chief Guest Dr. Santosh Joshi addressing 
+the gathering. 
+ 
+External Evaluator Evaluate the students of 
+various track in RIT-Hackathon 2K23. 
+External Evaluator Evaluate the students of 
+various track in RIT-Hackathon 2K23. 
+K. E. Society’s 
+Rajarambapu Institute of Technology, Rajaramnagar 
+(An Autonomous Institute, affiliated to SUK) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Valedictory Function and Prize Distribution:  
+Chief Guest, all dignitaries, Faculty members and 
+Participants in Valedictory Function of RIT 
+HACKATHON - 2K23. 
+Valedictory Function and Prize Distribution: 
+Chief Guest Mr. Santosh Honguntti addressing 
+the gathering tracks. 
+Valedictory Function: Felicitation of Chief 
+Guest: Dr. Santosh Honguntti by Director Dr. 
+H. S. Jadhav 
+Prize Distribution 
+Prize Distribution 
+Prize Distribution 
+K. E. Society’s 
+Rajarambapu Institute of Technology, Rajaramnagar 
+(An Autonomous Institute, affiliated to SUK) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mr.Taranpreet Singh & Vinmay Mokashi             Dr. N.V. Dharwadkar                            Dr. H.S. Jadhav 
+Event Coordinator      
+ 
+                    HoD, CSE                             
+      I/c Director, 
+RIT 
+Prize Distribution 
+Prize Distribution 

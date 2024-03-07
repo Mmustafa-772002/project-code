@@ -1,8 +1,8 @@
 {
     "Hidden": [],
-    "Favorites": ["D:/Final project report/final project/project code/6_lask-fileexplorer-master/Database/Documents", "D:/Final project report/final project/project code/6_lask-fileexplorer-master/Database/Downloads"],
+    "Favorites": ["D:/Final project report/final project/project code/2_Text extraction/result/data", "D:/Final project report/final project/project code/2_Text extraction/result/images","D:/Final project report/final project/project code/2_Text extraction/result/uploads"],
     "Password": "",
-    "rootDir": "D:/Final project report/final project/project code/6_lask-fileexplorer-master/Database",
+    "rootDir": "D:/Final project report/final project/project code/2_Text extraction/result",
     "maxFileNameLength": 15,
     "sort_by_selected": 3
 }

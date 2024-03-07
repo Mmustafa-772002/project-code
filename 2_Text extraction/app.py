@@ -61,7 +61,7 @@ def upload():
         pdf_file_name = os.path.splitext(file.filename)[0]
 
         # Save the uploaded PDF file
-        pdf_file_path = os.path.join("uploads", f"{pdf_file_name}.pdf")
+        pdf_file_path = os.path.join("result/uploads", f"{pdf_file_name}.pdf")
         file.save(pdf_file_path)
 
         # Open the PDF file
@@ -74,12 +74,12 @@ def upload():
             extracted_text += page.get_text("text")
 
         # Save the extracted text to a text file with the same name as the PDF file
-        text_file_path = os.path.join("static", f"{pdf_file_name}.txt")
+        text_file_path = os.path.join("result/data/", f"{pdf_file_name}.txt")
         with open(text_file_path, "w", encoding="utf-8") as text_file:
             text_file.write(extracted_text)
 
         # Create a folder to save the extracted images
-        output_folder = f'static/{pdf_file_name}_extracted_images'
+        output_folder = f'result/images/{pdf_file_name}_extracted_images'
         os.makedirs(output_folder, exist_ok=True)
 
         # Extract images from the PDF
@@ -108,5 +108,5 @@ def upload():
         return jsonify({"text": extracted_text, "images_folder": output_folder})
 
 if __name__ == "__main__":
-    os.makedirs("uploads", exist_ok=True)
+    os.makedirs("result/uploads", exist_ok=True)
     app.run(debug=True)
