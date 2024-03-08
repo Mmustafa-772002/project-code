@@ -22,10 +22,10 @@ body {
 }
 
 .wrapper {
-  width: 430px;
+  width: 500px;
   background: #fff;
   border-radius: 5px;
-  padding: 30px;
+  padding: 50px;
   box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.05);
 }
 
@@ -37,14 +37,14 @@ body {
 }
 
 .wrapper form {
-  height: 167px;
+  height: 280px;
   display: flex;
   cursor: pointer;
-  margin: 30px 0;
+  margin: 20px 0;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border-radius: 5px;
+  border-radius: 6px;
   border: 2px dashed #6990F2;
 }
 

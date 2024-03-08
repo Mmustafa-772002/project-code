@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Extraction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #3498db;
+        }
+
+        textarea {
+            width: 100%;
+            font-size: 16px;
+            line-height: 1.6;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-sizing: border-box; /* Ensure padding and border are included in the width */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .btn {
+            height: 50px;
+            width: 300px;
+            font-size: 1.5rem;
+            align-items: center;
+            /* Add the following properties */
+            margin-top: 20px; /* Adjust the margin as needed */
+            background-color: #3498db; /* Change the background color */
+            color: #ffffff; /* Set text color to white */
+            border: none; /* Remove default button border */
+            border-radius: 10px; /* Add border radius for rounded corners */
+            cursor: pointer;
+            transition: background-color 0.3s; /* Add smooth transition for background color change */
+        }
+        
+        /* Add hover effect */
+        .btn:hover {
+            background-color: #2980b9; /* Change the background color on hover */
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div style="max-width: 1000px; margin: auto">
+        <h1>Extracted Text:</h1>
+        <textarea rows="10" id="extractedTextArea" style="font-family: Arial, sans-serif;">
+            {{ extracted_text }}
+        </textarea>
+        
+        <div class="container mt-3">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="form-group text-center">
+                        <label for="saveFilename" class="mr-2" style="font-size: 18px; margin-bottom:20px;">Save As:</label>
+                    
+<div class="input-group-prepend">
+    <div class="input-group">
+        <input type="text" class="form-control" id="saveFilename" placeholder="Enter filename" style="height: 30px; width: 280px; font-size: 18px;font-family: Arial, sans-serif;padding: 5px 12px; ">
+        <div class="input-group-prepend">
+            <select class="custom-select" id="fileFormat"
+            style="height: 40px; width: 310px; padding: 8px 12px; margin-top: 10px; font-size: 18px; font-family: Arial, sans-serif;">
+            <option value="txt">Text (.txt)</option>
+            <option value="html">HTML (.html)</option>
+            <option value="json">JSON (.json)</option>
+            <option value="png">Image (.png)</option>
+            <option value="pdf">PDF (.pdf)</option>
+            <option value="ppt">PowerPoint (.ppt)</option>
+            <option value="doc">Word Document (.doc)</option>
+        </select>
+        </div>
+    </div>
+    
+                        </div>
+                        <button type="button" class="btn btn-success mt-2" onclick="saveToFile()">Save</button>
+                        <button type="button" class="btn btn-success mt-2" onclick="location.href='/page3'">Upload Again</button>
+                        <button type="button" class="btn btn-success mt-2" onclick="location.href='/'">Homepage</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function redirectToUploadPage() {
+                // Assuming upload.html is in the same directory
+                window.location.href = 'upload.html';
+            }
+            </script>
+            
+        <h2>Extracted Images:</h2>
+        <div style="max-width: 100%; overflow: auto;">
+            {% for image in os.listdir(images_folder) %}
+                <img src="{{ url_for('static', filename=images_folder + '/' + image) }}" alt="Extracted Image" style="max-width: 100%; display: block; margin-bottom: 10px;">
+            {% endfor %}
+        </div>
+
+        <div style="text-align: center; font-size: 20px;">
+            <p>Note: The PDF and images Module are under development. <br>  When you save the pdf and image file then it will generate currupted file</p>
+        </div>
+        
+
+        <script src="https://cdnjsx.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+        <script>
+            function saveToFile() {
+                var resultTextarea = document.getElementById("extractedTextArea");
+                var content = resultTextarea.value;
+    
+                var saveFilenameInput = document.getElementById("saveFilename");
+                var userFilename = saveFilenameInput.value.trim();
+                var filename = userFilename || "translation_result";
+    
+                var fileFormatSelect = document.getElementById("fileFormat");
+                var selectedFormat = fileFormatSelect.value;
+                filename += "." + selectedFormat;
+    
+                var link = document.createElement("a");
+    
+                if (
+                    selectedFormat === "txt" ||
+                    selectedFormat === "json" ||
+                    selectedFormat === "html" ||
+                    selectedFormat === "png" ||
+                    selectedFormat === "pdf" ||
+                    selectedFormat === "ppt" ||
+                    selectedFormat === "doc"
+                ) {
+                    try {
+                        var blob = new Blob([content], { type: "text/plain" });
+                        link.href = URL.createObjectURL(blob);
+                        link.download = filename;
+                        link.click();
+                    } catch (error) {
+                        console.error("Error saving file:", error);
+                    }
+                } else if (selectedFormat === "pdf") {
+                    try {
+                        var element = document.getElementById("extractedTextArea");
+                        html2pdf(element, { filename: filename });
+                    } catch (error) {
+                        console.error("Error generating PDF:", error);
+                    }
+                } else if (selectedFormat === "png") {
+                    try {
+                        html2canvas(resultTextarea).then(function (canvas) {
+                            var imageDataURL = canvas.toDataURL("image/png");
+                            var blob = dataURLtoBlob(imageDataURL);
+                            link.href = URL.createObjectURL(blob);
+                            link.download = filename;
+                            link.click();
+                            // saveFileOnServer(content, filename, imageDataURL); // Uncomment if needed
+                        });
+                    } catch (error) {
+                        console.error("Error generating PNG:", error);
+                    }
+                } else {
+                    alert("Error: Unsupported file format.");
+                }
+            }
+    
+            function dataURLtoBlob(dataURL) {
+                var byteString = atob(dataURL.split(",")[1]);
+                var ab = new ArrayBuffer(byteString.length);
+                var ia = new Uint8Array(ab);
+                for (var i = 0; i < byteString.length; i++) {
+                    ia[i] = byteString.charCodeAt(i);
+                }
+                return new Blob([ab], { type: "image/png" });
+            }
+        </script>
+        </body>
+
+</html>

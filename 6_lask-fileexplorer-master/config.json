@@ -1,8 +1,8 @@
 {
     "Hidden": [],
-    "Favorites": ["D:/Final project report/final project/project code/2_Text extraction/result/data", "D:/Final project report/final project/project code/2_Text extraction/result/images","D:/Final project report/final project/project code/2_Text extraction/result/uploads"],
+    "Favorites": ["D:/Final project report/final project/project code/1_Language Translator/result/data", "D:/Final project report/final project/project code/1_Language Translator/result/images ","D:/Final project report/final project/project code/1_Language Translator/result/uploads"],
     "Password": "",
-    "rootDir": "D:/Final project report/final project/project code/2_Text extraction/result",
+    "rootDir": "D:/Final project report/final project/project code/1_Language Translator/result",
     "maxFileNameLength": 15,
     "sort_by_selected": 3
 }
