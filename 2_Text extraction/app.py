@@ -1,4 +1,4 @@
-# Run this file 
+# Run this file
 
 # To work on your Flask application code in Visual Studio Code (VS Code), you can use several extensions that can enhance your development experience. Here are some recommended extensions for working with Flask projects in VS Code:
 
@@ -42,9 +42,11 @@ from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def index():
     return render_template("upload.html")
+
 
 @app.route("/upload", methods=["POST"])
 def upload():
@@ -79,7 +81,7 @@ def upload():
             text_file.write(extracted_text)
 
         # Create a folder to save the extracted images
-        output_folder = f'result/images/{pdf_file_name}_extracted_images'
+        output_folder = f"result/images/{pdf_file_name}_extracted_images"
         os.makedirs(output_folder, exist_ok=True)
 
         # Extract images from the PDF
@@ -90,15 +92,17 @@ def upload():
             for img_index, xobject in enumerate(xobjects):
                 x = xobject[0]
                 image = doc.extract_image(x)
-                image_data = image['image']
+                image_data = image["image"]
 
-                image_filename = f"{output_folder}/page{page_num + 1}_img{img_index + 1}.jpg"
+                image_filename = (
+                    f"{output_folder}/page{page_num + 1}_img{img_index + 1}.jpg"
+                )
                 with open(image_filename, "wb") as img_file:
                     img_file.write(image_data)
 
                 # Apply image filter (Gaussian blur) to enhance clarity
                 with Image.open(image_filename) as img:
-                    img = img.convert('RGB')
+                    img = img.convert("RGB")
                     img = img.filter(ImageFilter.GaussianBlur(radius=1))
                     img.save(image_filename)
 
@@ -106,6 +110,7 @@ def upload():
         doc.close()
 
         return jsonify({"text": extracted_text, "images_folder": output_folder})
+
 
 if __name__ == "__main__":
     os.makedirs("result/uploads", exist_ok=True)

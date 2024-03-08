@@ -3,10 +3,7 @@
 <div id="navstrip">
   <div class="navbox">
     <div class="option">
-      <a href="{% url 'about' %}">
-        
-        
-      </a>
+      <a href="{% url 'about' %}"> </a>
     </div>
   </div>
 </div>
@@ -152,84 +149,82 @@
       <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
       <script>
         function saveToFile() {
-            var resultTextarea = document.getElementById("result");
-            var content = resultTextarea.value;
-    
-            var saveFilenameInput = document.getElementById("saveFilename");
-            var userFilename = saveFilenameInput.value.trim();
-            var filename = userFilename || "translation_result";
-    
-            var fileFormatSelect = document.getElementById("fileFormat");
-            var selectedFormat = fileFormatSelect.value;
-            filename += '.' + selectedFormat;
-    
-            // Create a link element
-            var link = document.createElement("a");
-    
-            if (
-                selectedFormat === "txt" ||
-                selectedFormat === "json" ||
-                selectedFormat === "html" ||
-                selectedFormat === "ppt" ||
-                selectedFormat === "doc"
-            ) {
-                // For text, JSON, HTML, PowerPoint, and Word Document formats, create a Blob from the content
-                var blob = new Blob([content], { type: "text/plain" });
-    
-                // Set the link properties
-                link.href = URL.createObjectURL(blob);
-                link.download = filename;
-    
-                // Trigger a click to download the file
-                link.click();
-            } else if (selectedFormat === "png") {
-                // For PNG format, convert the content to an image using html2canvas
-                html2canvas(resultTextarea).then(function (canvas) {
-                    // Convert the canvas to a data URL
-                    var imageDataURL = canvas.toDataURL("image/png");
-    
-                    // Create a Blob from the data URL
-                    var blob = dataURLtoBlob(imageDataURL);
-    
-                    // Set the link properties
-                    link.href = URL.createObjectURL(blob);
-                    link.download = filename;
-    
-                    // Trigger a click to download the image
-                    link.click();
-    
-                    // Save file to the server
-                    saveFileOnServer(content, filename, imageDataURL);
-                });
-            } else {
-                alert("Error: Unsupported file format.");
-            }
+          var resultTextarea = document.getElementById("result");
+          var content = resultTextarea.value;
+
+          var saveFilenameInput = document.getElementById("saveFilename");
+          var userFilename = saveFilenameInput.value.trim();
+          var filename = userFilename || "translation_result";
+
+          var fileFormatSelect = document.getElementById("fileFormat");
+          var selectedFormat = fileFormatSelect.value;
+          filename += "." + selectedFormat;
+
+          // Create a link element
+          var link = document.createElement("a");
+
+          if (
+            selectedFormat === "txt" ||
+            selectedFormat === "json" ||
+            selectedFormat === "html" ||
+            selectedFormat === "ppt" ||
+            selectedFormat === "doc"
+          ) {
+            // For text, JSON, HTML, PowerPoint, and Word Document formats, create a Blob from the content
+            var blob = new Blob([content], { type: "text/plain" });
+
+            // Set the link properties
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+
+            // Trigger a click to download the file
+            link.click();
+          } else if (selectedFormat === "png") {
+            // For PNG format, convert the content to an image using html2canvas
+            html2canvas(resultTextarea).then(function (canvas) {
+              // Convert the canvas to a data URL
+              var imageDataURL = canvas.toDataURL("image/png");
+
+              // Create a Blob from the data URL
+              var blob = dataURLtoBlob(imageDataURL);
+
+              // Set the link properties
+              link.href = URL.createObjectURL(blob);
+              link.download = filename;
+
+              // Trigger a click to download the image
+              link.click();
+
+              // Save file to the server
+              saveFileOnServer(content, filename, imageDataURL);
+            });
+          } else {
+            alert("Error: Unsupported file format.");
+          }
         }
-    
+
         function dataURLtoBlob(dataURL) {
-            var byteString = atob(dataURL.split(",")[1]);
-            var ab = new ArrayBuffer(byteString.length);
-            var ia = new Uint8Array(ab);
-            for (var i = 0; i < byteString.length; i++) {
-                ia[i] = byteString.charCodeAt(i);
-            }
-            return new Blob([ab], { type: "image/png" });
+          var byteString = atob(dataURL.split(",")[1]);
+          var ab = new ArrayBuffer(byteString.length);
+          var ia = new Uint8Array(ab);
+          for (var i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i);
+          }
+          return new Blob([ab], { type: "image/png" });
         }
-    
-        
+
         function translate() {
-            const textArea = document.getElementById("text");
-            const resultArea = document.getElementById("result");
-            resultArea.textContent = textArea.value;
-            updateTextareaHeight(resultArea);
+          const textArea = document.getElementById("text");
+          const resultArea = document.getElementById("result");
+          resultArea.textContent = textArea.value;
+          updateTextareaHeight(resultArea);
         }
-    
+
         function updateTextareaHeight(textArea) {
-            textArea.style.height = "auto";
-            textArea.style.height = textArea.scrollHeight + "px";
+          textArea.style.height = "auto";
+          textArea.style.height = textArea.scrollHeight + "px";
         }
-    </script>
-    
+      </script>
 
       <!-- Another form with a different textarea -->
       {% comment %}
